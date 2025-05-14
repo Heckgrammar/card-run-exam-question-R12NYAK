@@ -18,6 +18,22 @@
             int[] cards = dealCards();
             bool gameWon = false;
             // add your code here
+int runlength = 1;  // counter
+            for (int i = 1; i < cards.Length; i++)
+            { if (cards[i] == cards[i - 1] + 1) // checks if new card is exactly one higher than the last
+            { runlength ++; // increases count of how many cards found in a row
+              if (currentRunLength == 5)
+        {
+            gameWon = true; //player wins if they have five consecutive cards yayy
+            break;
+        }
+    }else if (cards[i] != cards[i - 1]) 
+    {
+        currentRunLength = 1; // counter reset boo
+    }
+}
+
+Console.WriteLine("you win!");
 
 
             // end of your code
